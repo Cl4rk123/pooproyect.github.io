@@ -1,0 +1,36 @@
+import {pelicula} from "./peliculas";
+import {sala} from "./sala";
+import {DataSingleton} from "./data";
+import {cliente} from "./cliente";
+
+// Clase Cinema que utiliza el patrón Singleton para obtener datos
+class Cinema {
+    private Pelicula: pelicula[];
+    private Sala: sala[];
+    private Comestible: string[];
+    private cliente: cliente[];
+    private dataSingleton: DataSingleton;
+
+    constructor() {
+        this.dataSingleton = DataSingleton.getInstance();
+        this.Pelicula = this.dataSingleton.getMovies();
+        this.Sala = this.dataSingleton.getSeats();
+        this.cliente = this.dataSingleton.getClient();
+    }
+
+    public selectMovie(Pelicula: pelicula): void {
+        // Lógica para seleccionar una película
+    }
+
+    public selectSeats(Sala: sala, selectedSeats: sala[]): void {
+        // Lógica para seleccionar asientos
+    }
+
+    public selectSnacks(selectedSnacks: string []): void {
+        // Lógica para seleccionar snacks
+    }
+
+    public displayCustomerDetails(customer: cliente): void {
+        // Mostrar detalles del cliente
+    }
+}

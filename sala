@@ -1,0 +1,26 @@
+import {pelicula} from "./peliculas";
+
+export class sala{
+    private _numero: number;
+    private _pelicula: pelicula;
+
+    constructor(Numero: number, Pelicula: pelicula){
+        this.numero= Numero;
+        this.pelicula=Pelicula
+    }
+
+    public get numero(): number {
+        return this._numero;
+    }
+    public set numero(value: number) {
+        this._numero = value;
+    }
+
+    public get pelicula(): pelicula {
+        return this._pelicula;
+    }
+    public set pelicula(value: pelicula) {
+        this._pelicula = value;
+    }
+
+}

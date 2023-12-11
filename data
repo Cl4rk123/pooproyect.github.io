@@ -1,0 +1,37 @@
+import { pelicula } from "./peliculas";
+import { sala } from "./sala";
+import {cliente} from "./cliente";
+
+// Implementación del patrón Singleton
+export class DataSingleton {
+    private static instance: DataSingleton;
+    private pelicula: pelicula[];
+    private sala: sala[];
+    private cliente: cliente[];
+
+    private constructor() {
+        // Inicializar listas de películas, asientos y snacks según sea necesario
+        this.pelicula = [];
+        this.sala = [];
+        this.cliente= [];
+    }
+
+    public static getInstance(): DataSingleton {
+        if (!DataSingleton.instance) {
+            DataSingleton.instance = new DataSingleton();
+        }
+        return DataSingleton.instance;
+    }
+
+    public getMovies(): pelicula[] {
+        return this.pelicula;
+    }
+
+    public getSeats(): sala[] {
+        return this.sala;
+    }
+
+    public getClient(): cliente[] {
+        return this.cliente;
+    }
+}

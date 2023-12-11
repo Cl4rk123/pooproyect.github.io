@@ -1,0 +1,69 @@
+import{sala} from "./sala";
+import {pelicula} from "./peliculas"
+
+export class cliente{
+    private _nombre: string;
+    private _pelicula: pelicula;
+    private _sala: sala;
+    private _asiento: string;
+    private _comestible: string;
+ 
+    constructor(Nombre: string, Pelicula: pelicula, Sala: sala,Asiento: string, Comestible: string){
+
+        this.nombre= Nombre;
+        this.pelicula= Pelicula;
+        this.sala= Sala;
+        this.asiento= Asiento;
+        this.comestible= Comestible;
+    }
+
+    public get nombre(): string {
+        return this._nombre;
+    }
+    public set nombre(value: string) {
+        this._nombre = value;
+    }
+
+    public get pelicula(): pelicula {
+        return this._pelicula;
+    }
+    public set pelicula(value: pelicula) {
+        this._pelicula = value;
+    }
+
+    public get sala(): sala {
+        return this._sala;
+    }
+    public set sala(value: sala) {
+        this._sala = value;
+    }
+
+    public get asiento(): string {
+        return this._asiento;
+    }
+    public set asiento(value: string) {
+        this._asiento = value;
+    }
+
+    public get comestible(): string {
+        return this._comestible;
+    }
+    public set comestible(value: string) {
+        this._comestible = value;
+    }
+
+    comprarEntrada(pelicula: pelicula, sala: sala, comestible: string){
+        this.pelicula= pelicula;
+        this.sala= sala;
+        this.comestible= comestible; 
+    }
+
+    seleccionarAsiento(): string{
+        return "A1"
+    }
+
+    mostrarDetalles(){
+        console.log()
+    }
+ 
+}

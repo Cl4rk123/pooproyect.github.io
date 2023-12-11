@@ -1,0 +1,23 @@
+import {sala} from "./sala";
+
+export class pelicula{
+    private _nombre: string;
+    pelicula: pelicula;
+    sala: sala;
+    
+    
+    constructor(Nombre: string, Pelicula: pelicula, Sala: sala){
+        this.nombre=Nombre;
+        this.pelicula=Pelicula;
+        this.sala=Sala;
+
+    }
+
+    public get nombre(): string {
+        return this._nombre;
+    }
+    public set nombre(value: string) {
+        this._nombre = value;
+    }
+}
+
